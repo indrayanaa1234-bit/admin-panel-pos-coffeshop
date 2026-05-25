@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kopi Kita POS</title>
+
+  <!-- FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ICON -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+
+    <div class="logo">
+      <i class='bx bx-coffee-togo'></i>
+
+      <div>
+        <h2>Kopi Kita</h2>
+        <p>Point of Sale System</p>
+      </div>
+    </div>
+
+    <div class="menu">
+      <a href="#" class="active">
+        <i class='bx bx-coffee'></i>
+        POS
+      </a>
+
+      <a href="#">
+        <i class='bx bx-history'></i>
+        Riwayat
+      </a>
+
+      <a href="#">
+        <i class='bx bx-grid-alt'></i>
+        Dashboard
+      </a>
+
+      <a href="#">
+    <i class='bx bx-bar-chart'></i>
+    Laporan
+  </a>
+    </div>
+
+  </nav>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- LEFT -->
+    <section class="left">
+
+      <!-- CATEGORY -->
+      <div class="categories">
+
+        <button class="active">Semua</button>
+        <button>Kopi</button>
+        <button>Non-Kopi</button>
+        <button>Makanan</button>
+        <button>Snack</button>
+
+      </div>
+
+      <!-- PRODUCTS -->
+      <div class="products" id="products">
+
+      </div>
+
+    </section>
+
+    <!-- RIGHT -->
+    <aside class="cart">
+
+      <h2>Pesanan Saat Ini</h2>
+
+      <p class="item-count">
+        <span id="itemCount">0</span> item
+      </p>
+
+      <div class="empty-cart">
+
+        <i class='bx bx-cart'></i>
+
+        <p>Keranjang masih kosong</p>
+
+      </div>
+
+      <div class="summary">
+
+        <div class="summary-item">
+          <span>Subtotal</span>
+          <span id="subtotal">Rp 0</span>
+        </div>
+
+        <div class="summary-item">
+          <span>Pajak (10%)</span>
+          <span id="tax">Rp 0</span>
+        </div>
+
+        <div class="total">
+          <span>Total</span>
+          <span id="total">Rp 0</span>
+        </div>
+
+        <button class="checkout">
+          Proses Pembayaran
+        </button>
+
+      </div>
+
+    </aside>
+
+  </main>
+
+  <!-- JS -->
+  <script src="assets/js/script.js"></script>
+
+</body>
+</html>
