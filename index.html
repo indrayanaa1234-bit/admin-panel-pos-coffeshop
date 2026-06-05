@@ -1,129 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kopi Kita POS</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- FONT -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Kopi Kita POS</title>
 
-  <!-- ICON -->
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/pos.css">
+
 </head>
-
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
+<!-- NAVBAR -->
+<header class="navbar">
 
-    <div class="logo">
-      <i class='bx bx-coffee-togo'></i>
+<div class="logo-area">
+<i class="fa-solid fa-mug-hot"></i>
 
-      <div>
-        <h2>Kopi Kita</h2>
-        <p>Point of Sale System</p>
-      </div>
-    </div>
+<div>
+<h2>Kopi Kita</h2>
+<p>Point of Sale System</p>
+</div>
+</div>
 
-    <div class="menu">
-      <a href="#" class="active">
-        <i class='bx bx-coffee'></i>
-        POS
-      </a>
+<nav class="menu">
 
-      <a href="#">
-        <i class='bx bx-history'></i>
-        Riwayat
-      </a>
+<a class="active">
+<i class="fa-solid fa-mug-hot"></i>
+POS
+</a>
 
-      <a href="#">
-        <i class='bx bx-grid-alt'></i>
-        Dashboard
-      </a>
+<a href="#">
+<i class="fa-solid fa-clock-rotate-left"></i>
+Riwayat
+</a>
 
-      <a href="#">
-    <i class='bx bx-bar-chart'></i>
-    Laporan
-  </a>
-    </div>
+<a href="#">
+<i class="fa-solid fa-table-cells"></i>
+Dashboard
+</a>
 
-  </nav>
+<a href="#">
+<i class="fa-regular fa-file-lines"></i>
+Laporan
+</a>
 
-  <!-- MAIN -->
-  <main>
+</nav>
 
-    <!-- LEFT -->
-    <section class="left">
+</header>
 
-      <!-- CATEGORY -->
-      <div class="categories">
+<!-- CONTENT -->
+<div class="container">
 
-        <button class="active">Semua</button>
-        <button>Kopi</button>
-        <button>Non-Kopi</button>
-        <button>Makanan</button>
-        <button>Snack</button>
+<!-- PRODUK -->
+<section class="products-section">
 
-      </div>
+<!-- CATEGORY -->
+<div class="category-bar">
 
-      <!-- PRODUCTS -->
-      <div class="products" id="products">
+<button class="category active">
+Semua
+</button>
 
-      </div>
+<button class="category">
+Kopi
+</button>
 
-    </section>
+<button class="category">
+Non-Kopi
+</button>
 
-    <!-- RIGHT -->
-    <aside class="cart">
+<button class="category">
+Makanan
+</button>
 
-      <h2>Pesanan Saat Ini</h2>
+<button class="category">
+Snack
+</button>
 
-      <p class="item-count">
-        <span id="itemCount">0</span> item
-      </p>
+</div>
 
-      <div class="empty-cart">
+<!-- PRODUCT GRID -->
+<div class="products-grid" id="productGrid"></div>
 
-        <i class='bx bx-cart'></i>
+</section>
 
-        <p>Keranjang masih kosong</p>
+<!-- CART -->
+<aside class="cart-panel">
 
-      </div>
+<div class="cart-header">
+<h2>Pesanan Saat Ini</h2>
+<p id="cartCount">0 item</p>
+</div>
 
-      <div class="summary">
+<div class="cart-body" id="cartItems">
 
-        <div class="summary-item">
-          <span>Subtotal</span>
-          <span id="subtotal">Rp 0</span>
-        </div>
+<div class="empty-cart">
 
-        <div class="summary-item">
-          <span>Pajak (10%)</span>
-          <span id="tax">Rp 0</span>
-        </div>
+<i class="fa-solid fa-cart-shopping"></i>
 
-        <div class="total">
-          <span>Total</span>
-          <span id="total">Rp 0</span>
-        </div>
+<p>Keranjang masih kosong</p>
 
-        <button class="checkout">
-          Proses Pembayaran
-        </button>
+</div>
 
-      </div>
+</div>
 
-    </aside>
+<div class="cart-footer">
 
-  </main>
+<div class="summary">
 
-  <!-- JS -->
-  <script src="assets/js/script.js"></script>
+<div>
+<span>Subtotal</span>
+<b id="subtotal">Rp 0</b>
+</div>
+
+<div>
+<span>Pajak (10%)</span>
+<b id="tax">Rp 0</b>
+</div>
+
+</div>
+
+<div class="total">
+
+<span>Total</span>
+
+<h2 id="total">
+Rp 0
+</h2>
+
+</div>
+
+<button id="payBtn">
+Proses Pembayaran
+</button>
+
+</div>
+
+</aside>
+
+</div>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
 
 </body>
 </html>

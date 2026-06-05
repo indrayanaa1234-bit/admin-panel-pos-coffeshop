@@ -1,251 +1,379 @@
-# KOPI KITA - POS Dashboard
+# PERANCANGAN SISTEM
+# CoffeeShop POS Dashboard
 
-## Deskripsi Project
+## 1. Deskripsi Sistem
 
-KOPI KITA merupakan aplikasi Point Of Sales (POS) berbasis web yang digunakan untuk membantu proses transaksi pada coffee shop atau cafe. Sistem ini dirancang dengan tampilan modern, minimalis, dan user-friendly agar memudahkan kasir dalam melakukan transaksi penjualan produk.
+CoffeeShop POS Dashboard merupakan aplikasi Point of Sale (POS) berbasis web yang digunakan untuk membantu proses transaksi penjualan pada kedai kopi. Sistem ini memungkinkan kasir untuk memilih produk, mengelola pesanan, melakukan pembayaran, melihat riwayat transaksi, memantau statistik penjualan, dan menghasilkan laporan.
 
-Project ini berfokus pada Client-Side Programming menggunakan HTML, CSS, dan JavaScript tanpa menggunakan backend database. Data yang digunakan bersifat mock data/simulasi.
-
----
-
-# Konsep UI/UX
-
-## Tema Design
-Glassmorphism & Modern Dashboard
-
-## Konsep Tampilan
-- Tampilan modern dan clean
-- Menggunakan card product interaktif
-- Dominasi warna cream, putih, dan orange kopi
-- Rounded corner pada card dan button
-- Responsive layout
-- User-friendly untuk kasir cafe
+Karena project ini menggunakan mock data tanpa database, seluruh data akan disimpan menggunakan LocalStorage browser.
 
 ---
 
-# Design System
+# 2. Tujuan Sistem
 
-## Color Palette
-
-| Fungsi | Warna |
-|--------|--------|
-| Primary | #E67E00 |
-| Background | #F5F5F5 |
-| Card Background | #FFFFFF |
-| Text Primary | #1E1E1E |
-| Text Secondary | #777777 |
-| Border | #E5E5E5 |
+- Mempermudah proses transaksi penjualan.
+- Menyimpan data transaksi secara lokal.
+- Menampilkan riwayat transaksi.
+- Menyediakan dashboard statistik penjualan.
+- Menghasilkan laporan penjualan.
 
 ---
 
-## Typography
+# 3. Teknologi yang Digunakan
 
-| Elemen | Font |
-|--------|------|
-| Heading | Poppins |
-| Body Text | Inter |
+| Teknologi | Fungsi |
+|------------|---------|
+| HTML5 | Struktur halaman |
+| CSS3 | Styling UI |
+| JavaScript (Vanilla JS) | Logika aplikasi |
+| LocalStorage | Penyimpanan data lokal |
+| Chart.js | Grafik Dashboard |
+| Font Awesome / Lucide | Icon |
 
 ---
 
-# Struktur Navigasi
+# 4. Struktur Halaman
 
-## Navbar
+## 4.1 POS
+
+Halaman utama transaksi.
+
+### Fitur
+
+- Menampilkan daftar produk
+- Filter kategori
+- Menambah produk ke keranjang
+- Mengubah jumlah item
+- Menghapus item
+- Menghitung subtotal
+- Menghitung pajak 10%
+- Menghitung total pembayaran
+- Tombol proses pembayaran
+
+### Komponen
+
+#### Navbar
+- Logo
 - POS
 - Riwayat
 - Dashboard
+- Laporan
 
----
-
-# Struktur Halaman
-
-## 1. Halaman POS
-Halaman utama transaksi kasir yang menampilkan daftar menu produk cafe.
-
-### Fitur:
-- Category filter
-- Product card
-- Add to cart
-- Cart sidebar
-- Subtotal otomatis
-- Pajak otomatis
-- Total pembayaran
-- Tombol checkout
-
----
-
-## 2. Halaman Dashboard
-Halaman statistik penjualan.
-
-### Fitur:
-- Total transaksi
-- Total pendapatan
-- Grafik penjualan
-- Produk terlaris
-- Statistik pelanggan
-
----
-
-## 3. Halaman Data Produk
-Halaman untuk mengelola data produk.
-
-### Fitur:
-- Tabel produk
-- Tambah produk
-- Edit produk
-- Hapus produk
-- Search produk
-- Filter kategori
-
----
-
-## 4. Halaman Riwayat
-Halaman daftar transaksi sebelumnya.
-
-### Fitur:
-- Detail transaksi
-- Tanggal transaksi
-- Total pembayaran
-- Status pembayaran
-
----
-
-# Komponen UI
-
-## Navbar
-Digunakan untuk navigasi antar halaman sistem.
-
----
-
-## Category Button
-Digunakan untuk memfilter produk berdasarkan kategori.
-
-Kategori:
+#### Kategori
 - Semua
 - Kopi
 - Non-Kopi
 - Makanan
 - Snack
 
----
+#### Daftar Produk
+Setiap kartu produk berisi:
 
-## Product Card
+- Gambar Produk
+- Nama Produk
+- Harga Produk
+- Tombol Tambah (+)
+
+#### Keranjang Pesanan
+
 Menampilkan:
-- gambar produk
-- nama produk
-- harga produk
-- tombol tambah produk
+
+- Produk yang dipilih
+- Jumlah item
+- Tombol tambah jumlah
+- Tombol kurangi jumlah
+- Tombol hapus item
+- Subtotal
+- Pajak
+- Total
+- Tombol Bayar
 
 ---
 
-## Cart Sidebar
+# 5. Riwayat Pesanan
+
+Halaman untuk melihat transaksi yang telah selesai.
+
+## Fitur
+
+- Menampilkan daftar transaksi
+- Pencarian transaksi
+- Filter tanggal
+- Detail transaksi
+
+## Informasi yang Ditampilkan
+
+- ID Pesanan
+- Tanggal
+- Produk
+- Jumlah Item
+- Total Pembayaran
+
+---
+
+# 6. Dashboard
+
+Halaman ringkasan statistik penjualan.
+
+## Kartu Statistik
+
+### Total Pendapatan
+
+Menampilkan total pendapatan seluruh transaksi.
+
+### Total Pesanan
+
+Menampilkan jumlah transaksi.
+
+### Rata-rata Pesanan
+
+Rata-rata nilai transaksi.
+
+### Total Item Terjual
+
+Jumlah seluruh produk yang berhasil dijual.
+
+---
+
+## Grafik Produk Terlaris
+
 Menampilkan:
-- daftar pesanan
-- subtotal
-- pajak
-- total pembayaran
-- tombol proses pembayaran
+
+- Nama Produk
+- Jumlah Penjualan
+
+Menggunakan Chart.js Bar Chart.
 
 ---
 
-## Statistik Card
-Menampilkan ringkasan data pada dashboard.
+## Grafik Distribusi Kategori
+
+Menampilkan:
+
+- Kopi
+- Non-Kopi
+- Makanan
+- Snack
+
+Menggunakan Pie Chart.
 
 ---
 
-## Table Data
-Digunakan untuk menampilkan data produk dan riwayat transaksi.
+# 7. Laporan Penjualan
+
+Halaman analisis penjualan.
+
+## Filter Waktu
+
+- Hari Ini
+- 7 Hari
+- 30 Hari
+- Semua
+
+## Ringkasan
+
+### Total Pendapatan
+Jumlah seluruh pendapatan.
+
+### Total Pesanan
+Jumlah transaksi.
+
+### Rata-rata Pesanan
+Rata-rata nilai transaksi.
 
 ---
 
-# User Flow
+## Fitur
 
-## Alur Transaksi POS
+### Cetak Laporan
 
-1. Kasir membuka halaman POS
-2. Kasir memilih kategori produk
-3. Kasir memilih produk
-4. Produk masuk ke keranjang
-5. Sistem menghitung subtotal dan pajak
-6. Kasir menekan tombol pembayaran
-7. Data transaksi masuk ke riwayat transaksi
+Menggunakan:
+
+```javascript
+window.print();
+```
+
+### Export CSV
+
+Mengunduh data transaksi dalam format CSV.
 
 ---
 
-# ERD
+# 8. Struktur Data
 
-```mermaid
-erDiagram
+## Produk
 
-PRODUK {
-    int id_produk
-    string nama_produk
-    string kategori
-    int harga
-    int stok
+```json
+{
+  "id": 1,
+  "nama": "Espresso",
+  "kategori": "Kopi",
+  "harga": 25000,
+  "gambar": "espresso.jpg"
 }
-
-TRANSAKSI {
-    int id_transaksi
-    string tanggal
-    int total
-    int pajak
-}
-
-DETAIL_TRANSAKSI {
-    int id_detail
-    int jumlah
-    int subtotal
-}
-
-PELANGGAN {
-    int id_pelanggan
-    string nama
-    string telepon
-}
-
-PRODUK ||--o{ DETAIL_TRANSAKSI : memiliki
-TRANSAKSI ||--o{ DETAIL_TRANSAKSI : memiliki
-PELANGGAN ||--o{ TRANSAKSI : melakukan
 ```
 
 ---
 
-# Halaman Yang Akan Dibuat
+## Keranjang
 
-1. Login Admin
-2. Dashboard
-3. POS Page
-4. Data Produk
-5. Form Produk
-6. Riwayat Transaksi
-7. Laporan Penjualan
-
----
-
-# Tools Yang Digunakan
-
-| Tools | Fungsi |
-|-------|---------|
-| Figma | UI Design |
-| HTML5 | Struktur Website |
-| CSS3 | Styling |
-| JavaScript | Interaktivitas |
-| Chart.js | Grafik Dashboard |
-| Boxicons | Icon |
-| VS Code | Code Editor |
+```json
+{
+  "id": 1,
+  "nama": "Espresso",
+  "harga": 25000,
+  "qty": 2
+}
+```
 
 ---
 
-# Link Figma
+## Transaksi
 
-https://www.figma.com/make/hVVvLF0hbJ5EmwcCQfb3x6/Coffeeshop-POS-Dashboard?t=TWJ99eUUfOMFFUwA-1
+```json
+{
+  "id": "TRX001",
+  "tanggal": "2026-06-03",
+  "items": [
+    {
+      "nama": "Espresso",
+      "qty": 2,
+      "harga": 25000
+    }
+  ],
+  "subtotal": 50000,
+  "pajak": 5000,
+  "total": 55000
+}
+```
 
 ---
 
-# Screenshot Design
+# 9. Penyimpanan Data
 
-<img width="1364" height="592" alt="image" src="https://github.com/user-attachments/assets/620d2cab-712f-4ba0-8b46-b5b1a7a201ad" />
-<img width="1366" height="595" alt="image" src="https://github.com/user-attachments/assets/bad6f1bb-6839-49b1-878a-9190c40511b0" />
-<img width="1365" height="597" alt="image" src="https://github.com/user-attachments/assets/843582c2-d4b9-4966-9717-f56b78b17a59" />
-<img width="1366" height="594" alt="image" src="https://github.com/user-attachments/assets/83f2b3f5-e989-4e4a-a17d-894b71cbd268" />
+## LocalStorage
 
+### products
+
+Menyimpan daftar produk.
+
+```javascript
+localStorage.setItem("products", JSON.stringify(products));
+```
+
+---
+
+### cart
+
+Menyimpan keranjang aktif.
+
+```javascript
+localStorage.setItem("cart", JSON.stringify(cart));
+```
+
+---
+
+### orders
+
+Menyimpan seluruh transaksi.
+
+```javascript
+localStorage.setItem("orders", JSON.stringify(orders));
+```
+
+---
+
+# 10. Alur Sistem
+
+## Proses Transaksi
+
+1. Kasir memilih produk
+2. Produk masuk ke keranjang
+3. Sistem menghitung subtotal
+4. Sistem menghitung pajak 10%
+5. Sistem menghitung total
+6. Kasir menekan tombol bayar
+7. Transaksi disimpan ke LocalStorage
+8. Keranjang dikosongkan
+9. Dashboard dan laporan diperbarui
+
+---
+
+# 11. Struktur Folder
+
+```text
+coffeeshop-pos/
+│
+├── index.html
+│
+├── pages/
+│   ├── pos.html
+│   ├── history.html
+│   ├── dashboard.html
+│   └── report.html
+│
+├── css/
+│   ├── style.css
+│   ├── pos.css
+│   ├── history.css
+│   ├── dashboard.css
+│   └── report.css
+│
+├── js/
+│   ├── products.js
+│   ├── cart.js
+│   ├── history.js
+│   ├── dashboard.js
+│   ├── report.js
+│   └── storage.js
+│
+├── assets/
+│   ├── images/
+│   └── icons/
+│
+└── PERANCANGAN.md
+```
+
+---
+
+# 12. Use Case
+
+## Kasir
+
+### Kelola Pesanan
+
+- Melihat produk
+- Menambah produk
+- Mengubah jumlah produk
+- Menghapus produk
+
+### Pembayaran
+
+- Menghitung total
+- Menyimpan transaksi
+
+### Riwayat
+
+- Melihat transaksi sebelumnya
+
+### Dashboard
+
+- Melihat statistik penjualan
+
+### Laporan
+
+- Mencetak laporan
+- Mengunduh laporan CSV
+
+---
+
+# 13. Target Hasil
+
+Sistem POS yang:
+
+- Responsive
+- Modern UI
+- Mudah digunakan
+- Data tersimpan di browser
+- Tidak memerlukan database
+- Mirip 95% dengan desain Figma
