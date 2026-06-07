@@ -13,48 +13,14 @@
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/navbar.css">
 <link rel="stylesheet" href="css/pos.css">
 
 </head>
 <body>
 
 <!-- NAVBAR -->
-<header class="navbar">
-
-<div class="logo-area">
-<i class="fa-solid fa-mug-hot"></i>
-
-<div>
-<h2>Kopi Kita</h2>
-<p>Point of Sale System</p>
-</div>
-</div>
-
-<nav class="menu">
-
-<a class="active">
-<i class="fa-solid fa-mug-hot"></i>
-POS
-</a>
-
-<a href="#">
-<i class="fa-solid fa-clock-rotate-left"></i>
-Riwayat
-</a>
-
-<a href="#">
-<i class="fa-solid fa-table-cells"></i>
-Dashboard
-</a>
-
-<a href="#">
-<i class="fa-regular fa-file-lines"></i>
-Laporan
-</a>
-
-</nav>
-
-</header>
+<div id="navbar"></div>
 
 <!-- CONTENT -->
 <div class="container">
@@ -96,8 +62,22 @@ Snack
 <aside class="cart-panel">
 
 <div class="cart-header">
+
+<div class="cart-top">
+
 <h2>Pesanan Saat Ini</h2>
+
+<span
+id="clearCartBtn"
+class="clear-cart"
+onclick="clearCart()">
+Hapus Semua
+</span>
+
+</div>
+
 <p id="cartCount">0 item</p>
+
 </div>
 
 <div class="cart-body" id="cartItems">
@@ -148,8 +128,145 @@ Proses Pembayaran
 
 </div>
 
+<script src="js/navbar.js"></script>
 <script src="js/products.js"></script>
 <script src="js/cart.js"></script>
+
+<!-- PAYMENT MODAL -->
+
+<div class="modal-overlay" id="paymentModal">
+
+<div class="payment-modal">
+
+<div class="modal-header">
+
+<h2>Pembayaran</h2>
+
+<button
+class="close-modal"
+onclick="closePaymentModal()">
+
+<i class="fa-solid fa-xmark"></i>
+
+</button>
+
+</div>
+
+<div class="payment-total">
+
+<p>Total Pembayaran</p>
+
+<h1 id="modalTotal">
+Rp 0
+</h1>
+
+</div>
+
+<div class="form-group">
+
+<label>Nama Pelanggan (Opsional)</label>
+
+<input
+type="text"
+id="customerName"
+placeholder="Masukkan nama pelanggan">
+
+</div>
+
+<div class="form-group">
+
+<label>Metode Pembayaran</label>
+
+<div class="payment-methods">
+
+<button
+class="method-btn active"
+data-method="Tunai">
+
+<i class="fa-solid fa-wallet"></i>
+
+<span>Tunai</span>
+
+</button>
+
+<button
+class="method-btn"
+data-method="Kartu">
+
+<i class="fa-regular fa-credit-card"></i>
+
+<span>Kartu</span>
+
+</button>
+
+<button
+class="method-btn"
+data-method="QRIS">
+
+<i class="fa-solid fa-qrcode"></i>
+
+<span>QRIS</span>
+
+</button>
+
+</div>
+
+</div>
+
+<div class="form-group">
+
+<label>Uang Diterima</label>
+
+<input
+type="number"
+id="cashInput"
+placeholder="0">
+
+</div>
+
+<div class="quick-money">
+
+<button onclick="addMoney(50000)">
+Rp 50.000
+</button>
+
+<button onclick="addMoney(100000)">
+Rp 100.000
+</button>
+
+<button onclick="addMoney(150000)">
+Rp 150.000
+</button>
+
+<button onclick="addMoney(200000)">
+Rp 200.000
+</button>
+
+</div>
+
+<div class="change-box">
+
+<span>Kembalian</span>
+
+<h2 id="changeAmount">
+Rp 0
+</h2>
+
+</div>
+
+<button
+class="confirm-payment"
+onclick="processPayment()">
+
+Konfirmasi Pembayaran
+
+</button>
+
+</div>
+
+</div>
+
+<script src="js/payment.js"></script>
 
 </body>
 </html>
